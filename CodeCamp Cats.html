@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!--
+    All pages should begin with <!DOCTYPE html>. This special string is known as a declaration and ensures the browser tries to meet industry-wide specifications.
+-->
+<html lang="en">
+    <!--
+        You can also specify the language of your page by adding the lang attribute to the html element.
+    -->
+<head>
+    <!--
+        The head element is used to contain metadata about the document, such as its title, links to stylesheets, and scripts. Metadata is information about the page that isn't displayed directly on the page.
+    -->
+    <meta charset="UTF-8">
+    <!--
+         tells the browser how to encode characters for the page.
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CatPhotoApp</title>
+    <!--
+        The title element determines what browsers show in the title bar or tab for the page.
+        The title is one of several elements that provide extra information not visible on the web page, but it is useful for search engines or how the page gets displayed
+    -->
+</head>
+<body>
+    <!--
+    Identifies the primary content of a web page, excluding navigational elements, headers, footers, and sidebars.
+    Improves accessibility by providing a clear structure for assistive technologies like screen readers.
+    Enhances SEO (Search Engine Optimization) by helping search engines understand the main focus of the page.
+    -->
+    <main>
+        
+        <!--
+        The <section> tag in HTML is used to define a semantic section within a document. It represents a meaningful portion of the content, typically a chapter, header, footer, or any other distinct section.
+        Creates a logical grouping for related content, improving the document's structure and readability.
+        -->
+        <section>
+        
+            <h1>CatPhotoApp</h1>
+            <h2>Cat Photos</h2>
+            <!--
+            The target attribute is primarily used with the <a> (anchor) element in HTML.It specifies  where to display the linked document when a user clicks on the hyperlink.
+
+            target="_blank": This is the most common option. It opens the link in a new tab (or window in older browsers).
+            target="_self": This explicitly forces the link to open in the current frame, even if a default target is set elsewhere in the document.
+            target="_parent": This opens the link in the parent frame of a frameset. (Framesets are less common in modern web design)
+            target="_top": This opens the link in the full body of the window, replacing the entire current page content.
+            target="framename": This opens the link in a specific named frame within the current document (requires frames).
+            -->
+            <p>See more <a href="https://freecatphotoapp.com" target="_blank">cat photos</a> in our gallery.</p>
+            <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back">
+    
+        </section>
+    
+        <section>
+            <h2>Cat Lists</h2>
+            <h3>Things cats love:</h3>
+            <ul>
+                <li>cat nip</li>
+                <li>laser pointers</li>
+                <li>lasagna</li>
+            </ul>
+            <!--
+            The <figure> tag in HTML5 is used to represent self-contained content that is visually distinct, like illustrations, diagrams, photos, or even code listings. 
+            It provides a semantic way to associate these elements with captions for better understanding.
+            -->
+            <figure>
+                <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg" alt="A slice of lasagna on a plate">
+                <figcaption>Cats <em>love</em> lasagna.</figcaption>
+            </figure> 
+            <h3>Top 3 things cats hate:</h3>
+            <ol>
+                <li>flea treatment</li>
+                <li>thunder</li>
+                <li>other cats</li>
+            </ol>
+            <!--
+                Ordered and unordered lists are used to display information in HTML in a structured way, but they differ in how the items are presented:
+                Ordered Lists (Numbered Lists):
+                    items in an ordered list are numbered sequentially (1, 2, 3...).
+                Unordered Lists (Bulleted Lists):
+                    items in an unordered list are preceded by bullets (circles or squares).
+            -->
+            <figure>
+                <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg" alt="Five cats looking around a field.">
+                <figcaption>Cats <strong>hate</strong> other cats.</figcaption>
+                <!--
+                    The strong element is used to indicate that some text is of strong importance or urgent.
+                -->
+            </figure>
+        </section>
+        <section>
+            <h2>Cat Form</h2>
+            <!--
+                forms are sections that allow users to provide input to a web page. This input can be anything from text and passwords to selecting options from menus or clicking checkboxes.
+                The action attribute indicates where form data should be sent.
+                Here is an example of a form element with an action attribute:
+                <form action="/submit-url"></form>
+                In the example, action="/submit-url" tells the browser that the form data should be sent to the path /submit-url.
+            -->
+            <form action="https://freecatphotoapp.com/submit-cat-photo">
+                <fieldset>
+                    <!--
+                        The fieldset element is used to group related inputs and labels together in a web form. fieldset elements are block-level elements, meaning that they appear on a new line.
+                    -->
+                    <legend>Is your cat an indoor or outdoor cat?</legend>
+                    <!--
+                        The legend element acts as a caption for the content in the fieldset element. It gives users context about what they should enter into that part of the form.
+                    -->
+                    <label><input checked type="radio" id ="indoor" name="indoor-outdoor" value="indoor">Indoor</label>
+                    <!--
+                        In order to make a checkbox checked or radio button selected by default, you need to add the checked attribute to it.
+                    -->
+                    <label><input id="outdoor" type="radio" name="indoor-outdoor1-" value="outdoor">Outdoor</label>
+                    <!--
+                        label elements are used to help associate the text for an input element with the input element itself (especially for assistive technologies like screen readers).
+                        in this case if label isn't present u have to click the circle to select it but if label tag is present then you can click the word "Indoor" to select it.
+                        The id attribute is used to identify specific HTML elements. Each id attribute's value must be unique from all other id values for the entire page.
+                        To make it so selecting one radio button automatically deselects the other, both buttons must have a name attribute with the same value.
+                        the form data for the button is based on its name and value attributes. Since your radio buttons do not have a value attribute, the form data will include indoor-outdoor=on, which is not useful when you have multiple buttons.
+                    -->
+                </fieldset>
+                <fieldset>
+                    <legend>What's your cat's personality?</legend>
+                    <input checked id="loving" type="checkbox" name="personality" value="loving"> 
+                    <label for="loving">Loving</label>
+                    <input id="lazy" type="checkbox" name="personality" value="lazy">
+                    <label for="lazy">Lazy</label>
+                    <input id="energetic" type="checkbox" name="personality" value="energetic">
+                    <label for="energetic">Energetic</label>
+                    <!--
+                        You can nest the text within a label element and add a for attribute with the same value as the input element's id attribute.
+                    -->
+                </fieldset>
+                <input type="text" name ="catphotourl" placeholder="cat photo URL" required></input>
+                <!--
+                    The input element allows you several ways to collect data from a web form. Like img elements, input elements are self-closing and do not need closing tags.
+                    There are many kinds of inputs you can create using the type attribute. You can easily create a password field, reset button, or a control to let users select a file from their computer.
+                    To prevent a user from submitting your form when required information is missing, you need to add the required attribute to an input element. There's no need to set a value to the required attribute. Instead, just add the word required to the input element, making sure there is space between it and other attributes.
+                -->
+
+                <button type="submit">Submit</button>
+                <!--
+                    The button element is used to create a clickable button.
+                -->
+            </form>
+        </section>
+    
+    </main>
+    <footer>
+        <!--
+            The footer element is used to define a footer for a document or section. A footer typically contains information about the author of the document, copyright data, links to terms of use, contact information, and more.
+        -->
+        <p>No Copyright - <a href="https://www.freecodecamp.org">freeCodeCamp.org</a></p>
+    </footer>
+
+</body>
+</html>
